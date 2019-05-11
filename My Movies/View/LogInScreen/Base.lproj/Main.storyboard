@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="My_Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JfJ-xq-qxr">
+                                <rect key="frame" x="40" y="244" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.73725490196078436" green="0.67843137254901964" blue="0.58823529411764708" alpha="0.50757170376712324" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TmA-up-pGL"/>
+                                </constraints>
+                                <color key="textColor" name="Tint"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iA8-xA-0M3">
+                                <rect key="frame" x="40" y="324" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.73725490196078436" green="0.67843137254901964" blue="0.58823529411764708" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="B4w-F1-Ikw"/>
+                                </constraints>
+                                <color key="textColor" name="Tint"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aN4-Vr-1gH">
+                                <rect key="frame" x="40" y="424" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i2f-nv-b7d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" name="Accent"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" name="Accent"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nAy-2R-H5T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="BackGround"/>
+                        <color key="tintColor" name="Tint"/>
+                        <constraints>
+                            <constraint firstItem="JfJ-xq-qxr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="4m2-ff-7wL"/>
+                            <constraint firstItem="aN4-Vr-1gH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="66j-lU-TJR"/>
+                            <constraint firstItem="iA8-xA-0M3" firstAttribute="top" secondItem="JfJ-xq-qxr" secondAttribute="bottom" constant="30" id="67I-5Z-w8s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aN4-Vr-1gH" secondAttribute="trailing" constant="40" id="9on-Yf-UgI"/>
+                            <constraint firstItem="iA8-xA-0M3" firstAttribute="leading" secondItem="JfJ-xq-qxr" secondAttribute="leading" id="9tw-zV-qGw"/>
+                            <constraint firstItem="iA8-xA-0M3" firstAttribute="width" secondItem="JfJ-xq-qxr" secondAttribute="width" id="PgI-kh-fXC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JfJ-xq-qxr" secondAttribute="trailing" constant="40" id="dG3-q8-GIL"/>
+                            <constraint firstItem="JfJ-xq-qxr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="ddf-ip-1Ui"/>
+                            <constraint firstItem="aN4-Vr-1gH" firstAttribute="top" secondItem="iA8-xA-0M3" secondAttribute="bottom" constant="50" id="eMs-TD-sgG"/>
+                            <constraint firstItem="iA8-xA-0M3" firstAttribute="trailing" secondItem="JfJ-xq-qxr" secondAttribute="trailing" id="y42-Cu-gP7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="iA8-xA-0M3" id="nhp-1s-wqu"/>
+                        <outlet property="signInButton" destination="aN4-Vr-1gH" id="80Y-nt-WmF"/>
+                        <outlet property="userNameTextField" destination="JfJ-xq-qxr" id="Vvt-af-EDJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.73725490196078436" green="0.67843137254901964" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackGround">
+            <color red="0.10588235294117647" green="0.11372549019607843" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.37254901960784315" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <color key="tintColor" name="Tint"/>
+</document>

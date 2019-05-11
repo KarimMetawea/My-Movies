@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Movies", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! UITabBarController
+        UITabBar.appearance().unselectedItemTintColor = #colorLiteral(red: 0.0898700729, green: 0.260601759, blue: 0.2845869064, alpha: 1)
+        
+        window?.rootViewController = vc
         return true
     }
 

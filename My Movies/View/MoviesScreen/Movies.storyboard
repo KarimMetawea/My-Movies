@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yvm-Vk-eKe">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Watch List View Controller-->
+        <scene sceneID="uXf-xu-sg5">
+            <objects>
+                <viewController id="9Qa-aM-B5a" customClass="WatchListViewController" customModule="My_Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m41-3Z-7kP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackGround"/>
+                        <viewLayoutGuide key="safeArea" id="3bk-kQ-PbS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DU3-F0-MeU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNa-ye-JHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="-286"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Epr-fz-HfS">
+            <objects>
+                <viewController id="b2t-fS-aAe" customClass="HomeViewController" customModule="My_Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3NI-2y-bru">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackGround"/>
+                        <viewLayoutGuide key="safeArea" id="Xbs-aH-YdK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YEJ-hR-wHP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1I-VB-TD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="-1040"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jYs-fZ-D1c">
+            <objects>
+                <tabBarController id="Yvm-Vk-eKe" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Lua-Sb-hPr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="Tint"/>
+                        <color key="tintColor" name="Tint"/>
+                        <color key="barTintColor" name="BackGround"/>
+                        <color key="selectedImageTintColor" name="Tint"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cKa-L1-Gai" kind="relationship" relationship="viewControllers" id="6oh-mv-44Y"/>
+                        <segue destination="51j-tC-fXW" kind="relationship" relationship="viewControllers" id="SSj-Lg-UZm"/>
+                        <segue destination="2sh-JC-xN0" kind="relationship" relationship="viewControllers" id="FZE-Pk-ntB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HjK-NP-cGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="-245"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="oiD-87-B4d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cKa-L1-Gai" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="rsE-0I-VEj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gym-zb-8df">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackGround"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b2t-fS-aAe" kind="relationship" relationship="rootViewController" id="I9W-Re-Zpd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhf-Hb-Cbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-1040"/>
+        </scene>
+        <!--Watch list-->
+        <scene sceneID="GlD-Ur-yXQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="51j-tC-fXW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Watch list" image="watchList" selectedImage="watchList" id="pNI-cI-KF3">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zKl-58-Sdx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackGround"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Qa-aM-B5a" kind="relationship" relationship="rootViewController" id="iqI-Dy-43d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3a0-02-ckf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="-285"/>
+        </scene>
+        <!--Favourite View Controller-->
+        <scene sceneID="4Sy-1j-zwQ">
+            <objects>
+                <viewController id="VJL-89-Ycy" customClass="FavouriteViewController" customModule="My_Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cze-V5-toe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackGround"/>
+                        <viewLayoutGuide key="safeArea" id="utU-Wl-Unp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ugh-A8-6VY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdI-GR-PCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="516"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gTh-am-j82">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2sh-JC-xN0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="qAR-nY-mqM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="pfr-bu-4RU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackGround"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VJL-89-Ycy" kind="relationship" relationship="rootViewController" id="iKl-UK-QN8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6l-Jf-0Ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="516"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="18" height="18"/>
+        <image name="watchList" width="18" height="18"/>
+        <namedColor name="BackGround">
+            <color red="0.10588235294117647" green="0.11372549019607843" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.37254901960784315" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <color key="tintColor" name="Tint"/>
+</document>
