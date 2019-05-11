@@ -34,14 +34,98 @@
                     <view key="view" contentMode="scaleToFill" id="3NI-2y-bru">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGX-2c-rPr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" name="BackGround"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="bi7-Av-Dgl">
+                                    <size key="itemSize" width="149" height="191"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="H3c-NG-hcb" customClass="MovieCell" customModule="My_Movies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="191"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="191"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abI-gh-93x" customClass="DesignableView" customModule="Spring">
+                                                    <rect key="frame" x="5" y="0.0" width="139" height="191"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="30" text="jjakakkakakakakakaakaka" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29X-5I-Xmj">
+                                                            <rect key="frame" x="0.0" y="160" width="139" height="30"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                            <color key="textColor" name="Accent"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Wc-PBR" customClass="DesignableImageView" customModule="Spring">
+                                                            <rect key="frame" x="8" y="0.0" width="123" height="157"/>
+                                                            <color key="backgroundColor" name="Tint"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="157" id="W8q-o2-6Nf"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="BackGround"/>
+                                                    <constraints>
+                                                        <constraint firstItem="eaH-Wc-PBR" firstAttribute="leading" secondItem="abI-gh-93x" secondAttribute="leading" constant="8" id="81x-Hy-OWG"/>
+                                                        <constraint firstItem="eaH-Wc-PBR" firstAttribute="top" secondItem="abI-gh-93x" secondAttribute="top" id="8EQ-w4-ILR"/>
+                                                        <constraint firstItem="29X-5I-Xmj" firstAttribute="leading" secondItem="abI-gh-93x" secondAttribute="leading" id="ZmS-Dh-0PS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="29X-5I-Xmj" secondAttribute="trailing" id="eXC-PX-GM2"/>
+                                                        <constraint firstItem="29X-5I-Xmj" firstAttribute="top" secondItem="eaH-Wc-PBR" secondAttribute="bottom" constant="3" id="tIi-a5-Flc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eaH-Wc-PBR" secondAttribute="trailing" constant="8" id="zMj-Kr-er6"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="abI-gh-93x" secondAttribute="bottom" id="AN7-aD-Iea"/>
+                                            <constraint firstAttribute="trailing" secondItem="abI-gh-93x" secondAttribute="trailing" constant="5" id="HaH-GC-2cz"/>
+                                            <constraint firstItem="abI-gh-93x" firstAttribute="leading" secondItem="H3c-NG-hcb" secondAttribute="leading" constant="5" id="WR5-rb-kzX"/>
+                                            <constraint firstItem="abI-gh-93x" firstAttribute="top" secondItem="H3c-NG-hcb" secondAttribute="top" id="lx6-73-G80"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="movieImageView" destination="eaH-Wc-PBR" id="Sth-fM-UDN"/>
+                                            <outlet property="movieNameLabel" destination="29X-5I-Xmj" id="Dq1-wf-H7w"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="b2t-fS-aAe" id="Rba-mV-Xsd"/>
+                                    <outlet property="delegate" destination="b2t-fS-aAe" id="vVj-Jf-I04"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" name="BackGround"/>
+                        <constraints>
+                            <constraint firstItem="Xbs-aH-YdK" firstAttribute="bottom" secondItem="tGX-2c-rPr" secondAttribute="bottom" id="Fi4-F5-HQN"/>
+                            <constraint firstItem="tGX-2c-rPr" firstAttribute="top" secondItem="Xbs-aH-YdK" secondAttribute="top" id="Laf-vK-0Uu"/>
+                            <constraint firstItem="tGX-2c-rPr" firstAttribute="leading" secondItem="Xbs-aH-YdK" secondAttribute="leading" id="MF9-gB-NwR"/>
+                            <constraint firstItem="Xbs-aH-YdK" firstAttribute="trailing" secondItem="tGX-2c-rPr" secondAttribute="trailing" id="eAc-xn-w9A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xbs-aH-YdK"/>
                     </view>
                     <navigationItem key="navigationItem" id="YEJ-hR-wHP"/>
+                    <connections>
+                        <outlet property="collectionView" destination="tGX-2c-rPr" id="kVN-bL-av0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1I-VB-TD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="-1040"/>
+            <point key="canvasLocation" x="1039.1304347826087" y="-1040.625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jYs-fZ-D1c">
@@ -147,6 +231,9 @@
     <resources>
         <image name="home" width="18" height="18"/>
         <image name="watchList" width="18" height="18"/>
+        <namedColor name="Accent">
+            <color red="0.73725490196078436" green="0.67843137254901964" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BackGround">
             <color red="0.10588235294117647" green="0.11372549019607843" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -9,7 +9,8 @@
 import Foundation
 
 class MoviesData {
-    static let watchList = [String]()
-    static let favouriteMovies = [String]()
+    static let watchList = [Movie]()
+    static let favouriteMovies = [Movie]()
+    static var popularMovies = [Movie]()
     
 }

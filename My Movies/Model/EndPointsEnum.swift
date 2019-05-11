@@ -18,6 +18,8 @@ enum Endpoints {
     case requestToken
     case logIn
     case sessionId
+    case popularMovies
+    case getImage(String?)
     
     var stringValue: String {
         switch self {
@@ -30,6 +32,10 @@ enum Endpoints {
             
         case .sessionId:
             return Endpoints.base + "/authentication/session/new\(Endpoints.apiKeyParam)"
+        case .popularMovies:
+            return Endpoints.base + "/movie/popular\(Endpoints.apiKeyParam)"+"&language=en-US&page=1"
+        case .getImage(let imagepath):
+            return "https://image.tmdb.org/t/p/w500/\(imagepath ?? "kqjL17yufvn9OVLyXYpvtyrFfak.jpg")"
         }
     }
     
