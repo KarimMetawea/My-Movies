@@ -23,18 +23,15 @@ class LogInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        userNameTextField.text = ""
-        passwordTextField.text = ""
+        userNameTextField.text = "karimmetawea"
+        passwordTextField.text = "123456789"
     }
     
     @IBAction func SignInButtonPressed(_ sender: AnyObject) {
         signInButton.isEnabled = false
         signInButton.backgroundColor = UIColor.gray
-        print(Endpoints.sessionId.url)
-        
        
-        
-        AuthFunctions.getToken(completion: self.handleGetTokenRequest(success:error:))
+        TMDBClient.getRequestToken(completion: handleGetTokenRequest(success:error:))
         
     }
     
@@ -45,8 +42,7 @@ class LogInViewController: UIViewController {
             DispatchQueue.main.async {
                 let userName = self.userNameTextField.text ?? ""
                 let password = self.passwordTextField.text ?? ""
-                let logIn = LogInRequest.init(userName: userName, password: password, requestToken: Auth.requestToken)
-                AuthFunctions.logIn(logIn: logIn, completion: self.handleLogInRequest(success:error:))
+                TMDBClient.login(username: userName, password: password, completion: self.handleLogInRequest(success:error:))
             }
             
             
@@ -65,9 +61,7 @@ class LogInViewController: UIViewController {
 
     func handleLogInRequest(success:Bool,error:Error?){
         if success {
-            
-            print(Auth.requestToken)
-            AuthFunctions.getSessionId(completion: self.handleSessionIdRequest(success:error:))
+            TMDBClient.createSessionId(completion: handleSessionIdRequest(success:error:))
             
         }else {
             print("loginrequest error")

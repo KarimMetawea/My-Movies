@@ -10,18 +10,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var currentSearchTask: URLSessionDataTask?
+    var movies = [Movie]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        MoviesFunctions.getPopularMovies { (success, error) in
-            if success {
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
+        TMDBClient.getPopular { (movies, error) in
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.collectionView.reloadData()
             }
         }
+    
+       
     }
     
 
@@ -45,16 +51,24 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO:- Required Method
-        return MoviesData.popularMovies.count
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        let movie = MoviesData.popularMovies[indexPath.row]
+        let movie = movies[indexPath.row]
         
         cell.configureCell(movie: movie)
         // TODO:- Required Method
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "MovieDetailViewController", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! MovieDetailViewController
+        vc.movie = movies[indexPath.row]
+        vc.hidesBottomBarWhenPushed = true
+
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -80,6 +94,42 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 12
     }
+    
+}
+extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        currentSearchTask?.cancel()
+        currentSearchTask = TMDBClient.search(query: searchText, completion: { (movies, error) in
+            
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.collectionView.reloadData()
+            }
+        })
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.text = nil
+        TMDBClient.getPopular { (movies, error) in
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.collectionView.reloadData()
+            }
+        }
+        
+    }
+    
 }
 
 

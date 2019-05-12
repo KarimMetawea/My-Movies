@@ -1,5 +1,5 @@
 //
-//  MoviesResult.swift
+//  HomeViewController.swift
 //  My Movies
 //
 //  Created by karim metawea on 5/11/19.
@@ -7,14 +7,19 @@
 //
 
 import Foundation
-struct MoviesResult: Codable {
+
+struct MovieResults: Codable {
+    
     let page: Int
     let results: [Movie]
-    let totalResults, totalPages: Int
+    let totalPages: Int
+    let totalResults: Int
     
     enum CodingKeys: String, CodingKey {
-        case page, results
-        case totalResults = "total_results"
+        case page
+        case results
         case totalPages = "total_pages"
+        case totalResults = "total_results"
     }
+    
 }

@@ -22,9 +22,8 @@ class MovieCell: UICollectionViewCell {
     
     
     func configureCell(movie:Movie){
-        
-        movieImageView.kf.setImage(with: Endpoints.getImage(movie.posterPath).url)
-        movieNameLabel.text = movie.originalTitle
+        movieImageView.kf.setImage(with: TMDBClient.Endpoints.posterImage(movie.posterPath ?? "").url)
+        movieNameLabel.text = movie.title
     }
     
 }
