@@ -67,6 +67,8 @@ class MovieDetailViewController: UIViewController {
         TMDBClient.markFavorite(movieId: movie!.id, favorite: !inFavoritesList, completion: handleFavoriteResponse(success:error:))
     }
     func handleWatchlistResponse(success: Bool, error: Error?) {
+        self.toggleButton(self.addToWatchListButton, enabled: self.addToWatchListButton.tintColor == #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1) )
+
         if success {
             if inWatchList {
                 print("before delete: \(MovieModel.watchlist.count)")
@@ -76,12 +78,13 @@ class MovieDetailViewController: UIViewController {
                 MovieModel.watchlist.append(movie!)
             }
             
-                self.toggleButton(self.addToWatchListButton, enabled: self.inWatchList)
-            
+
         }
     }
     
     func handleFavoriteResponse(success: Bool, error: Error?) {
+        self.toggleButton(self.favouriteButton, enabled: self.favouriteButton.tintColor == #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1) )
+
         if success {
             if inFavoritesList {
                 MovieModel.favorites = MovieModel.favorites.filter() {$0 != movie}
@@ -89,7 +92,6 @@ class MovieDetailViewController: UIViewController {
                 MovieModel.favorites.append(movie!)
             }
             
-                self.toggleButton(self.favouriteButton, enabled: self.inWatchList)
             
         }
     }
