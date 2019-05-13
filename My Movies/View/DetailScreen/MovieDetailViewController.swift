@@ -20,10 +20,14 @@ class MovieDetailViewController: UIViewController {
     
     var movie:Movie?
     var inWatchList:Bool{
-        return MovieModel.watchlist.contains(movie!)
+        return MovieModel.watchlist.contains(where: { (movie) -> Bool in
+            movie.id == self.movie?.id
+        })
     }
     var inFavoritesList:Bool{
-        return MovieModel.favorites.contains(movie!)
+        return MovieModel.favorites.contains(where: { (movie) -> Bool in
+            movie.id == self.movie?.id
+        })
     }
     
     override func viewDidLoad() {
@@ -67,13 +71,13 @@ class MovieDetailViewController: UIViewController {
         TMDBClient.markFavorite(movieId: movie!.id, favorite: !inFavoritesList, completion: handleFavoriteResponse(success:error:))
     }
     func handleWatchlistResponse(success: Bool, error: Error?) {
-        self.toggleButton(self.addToWatchListButton, enabled: self.addToWatchListButton.tintColor == #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1) )
 
         if success {
             if inWatchList {
                 print("before delete: \(MovieModel.watchlist.count)")
                 MovieModel.watchlist = MovieModel.watchlist.filter() {$0 != movie}
                 print("after delete: \(MovieModel.watchlist.count)")
+                self.toggleButton(self.addToWatchListButton, enabled: inWatchList)
             } else {
                 MovieModel.watchlist.append(movie!)
             }
@@ -83,11 +87,12 @@ class MovieDetailViewController: UIViewController {
     }
     
     func handleFavoriteResponse(success: Bool, error: Error?) {
-        self.toggleButton(self.favouriteButton, enabled: self.favouriteButton.tintColor == #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1) )
 
         if success {
             if inFavoritesList {
                 MovieModel.favorites = MovieModel.favorites.filter() {$0 != movie}
+                self.toggleButton(self.favouriteButton, enabled: inFavoritesList )
+
             } else {
                 MovieModel.favorites.append(movie!)
             }
