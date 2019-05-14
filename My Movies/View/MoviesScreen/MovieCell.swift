@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Spring
 import Kingfisher
 
 class MovieCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var movieImageView: DesignableImageView!
+    @IBOutlet weak var movieImageView: UIImageView!
     
     @IBOutlet weak var movieNameLabel: UILabel!
     

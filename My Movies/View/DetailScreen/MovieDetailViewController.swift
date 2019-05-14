@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import Spring
 
 class MovieDetailViewController: UIViewController {
     
-    @IBOutlet weak var movieImageView:DesignableImageView!
+    @IBOutlet weak var movieImageView:UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var addToWatchListButton: UIButton!

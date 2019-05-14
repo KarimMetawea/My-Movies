@@ -1,14 +1,12 @@
 PODS:
   - Alamofire (4.0.1)
   - Hero (1.4.0)
-  - Kingfisher (5.1.1)
-  - Spring (1.0.6)
+  - Kingfisher (5.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.0)
   - Hero
   - Kingfisher (~> 5.0)
-  - Spring (from `https://github.com/MengTo/Spring.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -16,21 +14,11 @@ SPEC REPOS:
     - Hero
     - Kingfisher
 
-EXTERNAL SOURCES:
-  Spring:
-    :git: https://github.com/MengTo/Spring.git
-
-CHECKOUT OPTIONS:
-  Spring:
-    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
-    :git: https://github.com/MengTo/Spring.git
-
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
-  Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
-  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  Kingfisher: 9c8f2cc6710334e06f32ba2b45e77707d5e2f0c9
 
-PODFILE CHECKSUM: 72bebeb52d525a9383260ae8123be0af2356ee00
+PODFILE CHECKSUM: 4166c1ad6dc348edbe16ab1972b5db2eae6676c4
 
 COCOAPODS: 1.6.0
