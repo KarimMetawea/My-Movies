@@ -17,7 +17,11 @@ class FavouriteViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        TMDBClient.getFavorites { (movies, error) in
+            //            self.movies = movies
+            MovieModel.favorites = movies
+            self.collectionView.reloadData()
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

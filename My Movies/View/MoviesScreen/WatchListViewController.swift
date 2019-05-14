@@ -17,7 +17,10 @@ class WatchListViewController: UIViewController {
     var movies = [Movie]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        TMDBClient.getWatchlist { (movies, error) in
+            //            self.movies = movies
+            MovieModel.watchlist = movies
+            self.collectionView.reloadData()}
         // Do any additional setup after loading the view.
         
     }
